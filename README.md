@@ -1,5 +1,5 @@
 # Would you rather React App
-Small web application that allows user to sign in and play “Would You Rather?”. The game goes like this: A user is asked a question in the form: “Would you rather [option A] or [option B] ?”. Answering "neither" or "both" is against the rules.
+Small web application made with react and redux that allows user to sign in and play “Would You Rather?”. The game goes like this: A user is asked a question in the form: “Would you rather [option A] or [option B] ?”. Answering "neither" or "both" is against the rules.
 
 In this game, users can 
 
