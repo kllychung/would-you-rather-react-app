@@ -6,9 +6,9 @@ import { showLoading, hideLoading } from 'react-redux-loading-bar'
 
 
 export const SAVE_QUESTION_ANSWER = 'SAVE_QUESTION_ANSWER'
+export const ADD_QUESTION = 'ADD_QUESTION'
 
 export function handleInitialData(authedUser) {
-
     return (dispatch) => {
         dispatch(showLoading())
         return getInitialData()
@@ -27,6 +27,13 @@ export function addQuestionVote(id, vote, authedUser) {
         id,
         vote,
         authedUser
+    }
+}
+
+export function addQuestion(question) {
+    return {
+        type: ADD_QUESTION,
+        question
     }
 }
 

@@ -1,16 +1,8 @@
 import { hideLoading, showLoading } from 'react-redux-loading-bar'
 import { saveQuestion } from "../Utils/api"
+import { ADD_QUESTION, SAVE_QUESTION_ANSWER } from './shared'
 
-export const ADD_QUESTION = 'ADD_QUESTION'
 export const GET_QUESTION = 'GET_QUESTION'
-export const SAVE_QUESTION_ANSWER = 'SAVE_QUESTION_ANSWER'
-
-function addQuestion(question) {
-    return {
-        type: ADD_QUESTION,
-        question
-    }
-}
 
 export function handleAddQuestion(optionOne, optionTwo) {
     return (dispatch, getState) => {
@@ -27,6 +19,13 @@ export function handleAddQuestion(optionOne, optionTwo) {
         }).then(
             () => dispatch(hideLoading())
         )
+    }
+}
+
+export function addQuestion(question) {
+    return {
+        type: ADD_QUESTION,
+        question
     }
 }
 
