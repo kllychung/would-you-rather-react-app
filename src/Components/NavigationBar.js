@@ -21,7 +21,7 @@ const NavigationBar = (props) => {
         <NavLink to='/' className='active' >
           Home
         </NavLink>
-        <NavLink to='/new' className='active'>
+        <NavLink to='/add' className='active'>
           New Question
         </NavLink>
         <NavLink to='/leaderboard' className='active'>

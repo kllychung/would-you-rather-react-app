@@ -31,7 +31,7 @@ const App = (props) => {
       <Container>
         <Routes>
           <Route exact path='/' element={isNullUser ? <Navigate to='/signIn' /> : <Dashboard />} />
-          <Route path='new' element={isNullUser ? <Navigate to='/signIn' /> : <CreateQuestion />} />
+          <Route path='add' element={isNullUser ? <Navigate to='/signIn' /> : <CreateQuestion />} />
           <Route path='signIn' element={<SignIn />} />
           <Route path='questions/:id' element={isNullUser ? <Navigate to='/signIn' /> : <AnswerQuestion />} />
           <Route path='questions/:id/result' element={isNullUser ? <Navigate to='/signIn' /> : <QuestionResults />} />
