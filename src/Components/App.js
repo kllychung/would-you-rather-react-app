@@ -10,7 +10,6 @@ import LoadingBar from 'react-redux-loading-bar'
 import { Routes, Route, Navigate } from 'react-router-dom';
 import NavigationBar from './NavigationBar'
 import { Container } from '@mui/system';
-import QuestionResults from './QuestionResults';
 import Leaderboard from './Leaderboard';
 import PageNotFound from './PageNotFound';
 
@@ -34,7 +33,6 @@ const App = (props) => {
           <Route path='add' element={isNullUser ? <Navigate to='/signIn' /> : <CreateQuestion />} />
           <Route path='signIn' element={<SignIn />} />
           <Route path='questions/:id' element={isNullUser ? <Navigate to='/signIn' /> : <AnswerQuestion />} />
-          <Route path='questions/:id/result' element={isNullUser ? <Navigate to='/signIn' /> : <QuestionResults />} />
           <Route path='leaderboard' element={isNullUser ? <Navigate to='/signIn' /> : <Leaderboard />} />
           <Route path='*' element={<PageNotFound />} />
         </Routes>
