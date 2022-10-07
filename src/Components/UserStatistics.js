@@ -22,7 +22,6 @@ const UserStatistics = props => {
             <p style={{ float: "right" }}>{user.questions}</p>
           </Stack>
         </Container>
-
         <Stack >
           <Box className='border'>
             <h2>Score</h2>

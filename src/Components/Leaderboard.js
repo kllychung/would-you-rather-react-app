@@ -8,8 +8,7 @@ const Leaderboard = (props) => {
   return (
     userStats.map((user) =>
       <UserStatistics key={user.id} user={user} />
-    )
-  );
+    ));
 }
 
 function mapStateToProps({ users }) {

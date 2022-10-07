@@ -51,7 +51,6 @@ function mapStateToProps({ questions, authedUser, users }) {
     questions: questions,
     users: users,
     authedUser: authedUser,
-
   }
 }
 

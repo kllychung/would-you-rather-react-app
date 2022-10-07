@@ -11,26 +11,37 @@ const AnswerQuestion = props => {
   const params = useParams();
   const navigate = useNavigate();
   const dispatch = useDispatch()
-  const [value, setValue] = useState('')
-
+  let [value, setValue] = useState('')
   const qid = params.id
-  const { questions, users } = props
+  const { questions, users, authedUser } = props
   const question = questions[qid];
+
+  if (question.optionOne.votes.includes(authedUser)) {
+    value = 'optionOne'
+  }
+  else if (question.optionTwo.votes.includes(authedUser)) {
+    value = 'optionTwo'
+  }
+
+  const isPollAnswered = question.optionOne.votes.includes(authedUser) || question.optionTwo.votes.includes(authedUser)
+
   const isFoundQid = Object.keys(questions).includes(qid)
   const user = isFoundQid ? users[question.author] : {}
-  
+
   const handleChange = (event) => {
     setValue(event.target.value)
   }
 
   const handleSubmit = () => {
-    dispatch(handleSaveQuestionAnswer(
+    if (!isPollAnswered) dispatch(handleSaveQuestionAnswer(
       qid, value))
-      navigate('result')
+    navigate('result')
   }
 
+  const buttonText = isPollAnswered ? 'View Poll Result' : 'Submit Answer'
+
   return (
-    !isFoundQid ? <Navigate to='/error' /> : 
+    !isFoundQid ? <Navigate to='/error' /> :
       <Container maxWidth="sm">
         <Stack direction="column" sx={{ border: 2, borderColor: '#cfe8fc', borderRadius: 2, px: 0, py: 0 }}>
           <h4 style={{ padding: 2, marginLeft: 10 }}>{user.name} says</h4>
@@ -61,8 +72,9 @@ const AnswerQuestion = props => {
                   onClick={handleSubmit}
                   disabled={value === '' ? true : false}
                   sx={{ mx: 'auto', height: 40, my: 1 }}
-                  variant="contained">Submit
+                  variant="contained">{buttonText}
                 </Button>
+
               </Container>
             </div>
           </Stack>
@@ -71,10 +83,11 @@ const AnswerQuestion = props => {
   )
 }
 
-function mapStateToProps({ questions, users }) {
+function mapStateToProps({ questions, users, authedUser }) {
   return {
     questions: questions,
     users: users,
+    authedUser: authedUser
   }
 }
 

@@ -9,7 +9,7 @@ const Question = (props) => {
   const [toViewQuestion, setToViewQuestion] = useState(false);
   const { question, answered } = props
 
-  const navLink = answered ? '/questions/'.concat(question.id, '/result') : '/questions/'.concat(question.id)
+  const navLink = '/questions/'.concat(question.id)
 
   const handleClick = (e) => {
     setToViewQuestion(true)
@@ -36,7 +36,7 @@ const Question = (props) => {
               variant='outlined'
               onClick={handleClick}
             >
-              {answered ? "View result" : "Answer Poll"}
+              View result
             </Button>
           </Container>
         </Stack>

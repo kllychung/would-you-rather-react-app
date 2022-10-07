@@ -40,7 +40,6 @@ const Dashboard = (props) => {
           </Container>)}
       </Stack>
     </Box>
-
   )
 }
 

@@ -31,7 +31,6 @@ const QuestionResult = props => {
           )}%`}</Typography>
         </Box>
       </Box>
-
       <h4>{questionVotes} out of {totalVotes} votes</h4>
     </Box>
 
