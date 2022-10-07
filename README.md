@@ -1,30 +1,25 @@
-# Would you rather React App
-Small web application made with react and redux that allows user to sign in and play “Would You Rather?”. The game goes like this: A user is asked a question in the form: “Would you rather [option A] or [option B] ?”. Answering "neither" or "both" is against the rules.
+# Would you rather 
+Small web application made with react and redux that allows users to play “Would You Rather?”. 
+
+## App Description
+The game goes like this: A user is asked a question in the form: “Would you rather [option A] or [option B] ?”. Answering "neither" or "both" is against the rules.
 
 In this game, users can 
 
-1. Create questions
-2. See their unanswered questions 
-3. Answer questions
-4. View the votes of other players 
-5. See the ranking of users on the leaderboard
+1. Users can sign in
+2. Create questions
+3. See their unanswered questions 
+4. Answer questions
+5. View the votes of other players 
+6. See the ranking of users on the leaderboard
 
 ## Available Scripts
 
-In the project directory, you can run:
+To get started developing right away:
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- install all project dependencies with `npm install`
+- start the development server with `npm start`
+- test the app with `npm test`
 
 ## Project Directory
 
